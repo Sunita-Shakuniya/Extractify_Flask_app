@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Upload and Text Extraction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <ul class="links">
+                <div class="logo">
+                    <a href="/"><img src="{{ url_for('static', filename='ClickToKnow.png') }}" alt="Logo"></a>
+                </div>   
+                <li><a href="/">Home</a></li>
+                <li><a href="#">About</a></li>
+            </ul> 
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+    </header>
+        
+    <div class="frame">
+        <div class="center">
+            <div class="title">
+                <h1>Image Upload</h1>
+            </div>
+            <div class="dropzone">
+                <!-- Image preview container -->
+                <img id="imagePreview" src="" class="upload-preview" class="img_pre">
+                <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" id="uploadIcon">
+            </div>
+            <form id="imageForm" action="/upload" method="post" enctype="multipart/form-data">
+                <!-- Separate button to trigger file input -->
+                <button class="btn"  type="button" onclick="document.querySelector('.upload-input').click();">Upload Image</button>
+                <!-- Hidden file input -->
+                <input class="upload-input" type="file" name="image" onchange="previewImage(this);" style="display: none;">
+                <div class="btn-container">
+                    <!-- Submit button for image upload -->
+                    <button class="btn"    type="submit" name="uploadbutton" value="Upload" id="extractButton" disabled>Extract Text</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% if extracted_text %}
+        <div >
+        <div class="frame2" >    
+            <div class="text_display" >
+                
+                <h2>Extracted Text:</h2>
+                <p>{{ extracted_text }}</p>
+            
+            </div>
+        </div>
+        </div>
+    {% endif %}
+   
+    {% if extracted_text and not translated_text %}
+    <form action="/translate_hindi" method="post">
+        <input type="hidden" name="text_to_translate" value="{{ extracted_text }}">
+        <div class="btn1">
+            <input class="btn2"  type="submit" value="Translate to Hindi" >
+        </div>
+    </form>
+    {% endif %}
+    {% if translated_text %}
+        <div class="frame2" >    
+            <div class="text_display">
+            
+                <h2>Translated Text :</h2>
+                <p>{{ translated_text }}</p>
+                
+            </div>
+        </div>
+    {% endif %}
+    {% if translated_text and  not audio_file %} 
+    <div>
+        <form action="/translate_audio" method="post">
+            <input type="hidden" name="text_to_translate" value="{{ extracted_text }}">
+            <input type="hidden" name="text_to_audio" value="{{ translated_text }}">
+            <div class="btn1">
+                <input class="btn2"  type="submit" value="Translate to Audio">
+            </div>
+           
+        </form>   
+    </div>
+    <div class="btn1" >
+     {% endif %}
+    {% if audio_file %}   
+    <audio controls class="audio">
+        <h2>Translated Audio:</h2>
+        <source src="{{ audio_file }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    {% endif %}
+    </div> 
+
+    <script src="{{ url_for('static', filename='script.js') }}" ></script>
+</body>
+</html>

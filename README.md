@@ -20,3 +20,7 @@ This Flask-based tool allows users to upload images, extract text using Optical 
 Check out the demo video showcasing the features and usage of our tool!
 
 [![Project Demo](https://github.com/Sunita-Shakuniya/Extractify_Flask_app/blob/main/static/ClickToKnow.png)](https://youtube.com/shorts/RLL_zCTxEUs?si=0oUm6EPeAAv8qWff)
+<!-- HTML for resizing -->
+<a href="https://www.youtube.com/watch?v=your-video-id" target="_blank">
+    <img src="https://youtube.com/shorts/RLL_zCTxEUs?si=0oUm6EPeAAv8qWff" alt="Project Demo" width="50%">
+</a>

@@ -19,7 +19,12 @@ This Flask-based tool allows users to upload images, extract text using Optical 
 
 Check out the demo video showcasing the features and usage of our tool!
 
+### Screenshots:
+ <img src="https://github.com/Sunita-Shakuniya/data/blob/main/step%201.png?raw=true" alt="Project Demo" width="50%">
+<img src="https://github.com/Sunita-Shakuniya/data/blob/main/step2.png?raw=true" alt="Project Demo" width="50%">
+<img src="https://github.com/Sunita-Shakuniya/data/blob/main/step3.png?raw=true" alt="Project Demo" width="50%">
 <!-- HTML for resizing -->
-<a href="https://www.youtube.com/watch?v=your-video-id" target="_blank">
-    <img src="https://youtube.com/shorts/RLL_zCTxEUs?si=0oUm6EPeAAv8qWff" alt="Project Demo" width="50%">
+<a href="https://youtube.com/shorts/RLL_zCTxEUs?si=0oUm6EPeAAv8qWff" target="_blank">
+   Watch the Demo Video
 </a>
+

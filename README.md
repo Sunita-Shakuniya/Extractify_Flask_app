@@ -14,3 +14,9 @@ This Flask-based tool allows users to upload images, extract text using Optical 
 - **OCR**: Tesseract
 - **Translation**: Googletrans
 - **Text-to-Speech**: gTTS
+
+## Project Demo
+
+Check out the demo video showcasing the features and usage of our tool!
+
+[![Project Demo](https://img.youtube.com/vi/your-video-id/0.jpg)]([https://github.com/your-username/your-repo-name/raw/main/static/demo.mp4](https://github.com/Sunita-Shakuniya/data/blob/main/Untitled%20design%20(1).mp4))

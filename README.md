@@ -1,4 +1,3 @@
-# Extractify_Flask_app
 # OCR and Translation Tool with Audio Conversion 🎯
 
 ## Overview
